@@ -17,7 +17,7 @@ data vmc_customer_subnets "this" {
   region               = var.region
 }
 
-resource "vmc_sddc" "sddc_1" {
+resource "vmc_sddc" "this" {
   sddc_name           = var.sddc_name
   vpc_cidr            = var.vpc_cidr
   num_host            = var.sddc_num_hosts
@@ -32,7 +32,7 @@ resource "vmc_sddc" "sddc_1" {
 
   deployment_type = "SingleAZ"
   account_link_sddc_config {
-    customer_subnet_ids  = local.public_subnets
+    customer_subnet_ids  = [local.public_subnets[0]]
     connected_account_id = local.aws_account_number
   }
   timeouts {
