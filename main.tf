@@ -27,7 +27,7 @@ resource "vmc_sddc" "this" {
   num_host            = var.sddc_num_hosts
   #sddc_type           = "1Node"
   #provider_type       = "AWS"
-  region              = var.region
+  region              = "EU_WEST_2"
   vxlan_subnet        = "10.10.10.0/23"
   delay_account_link  = true
   skip_creating_vxlan = true
