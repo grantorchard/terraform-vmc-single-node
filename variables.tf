@@ -1,10 +1,10 @@
 variable refresh_token {
   type = string
 }
-/*variable org_id {
+variable org_id {
   type = string
 }
-*/
+
 variable region {
   type = string
   default = "ap-southeast-2"
@@ -27,5 +27,5 @@ variable sddc_num_hosts {
 
 variable vxlan_subnet {
   type = string
-  default = "172.16.1.0/24"
+  default = "172.16.1.0/23"
 }
