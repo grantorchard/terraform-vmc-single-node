@@ -12,7 +12,7 @@ variable region {
 
 variable sddc_name {
   type = string
-  default = "VMCasCode"
+  default = "VMCandTFC"
 }
 
 variable vpc_cidr {

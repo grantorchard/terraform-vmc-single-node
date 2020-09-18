@@ -22,7 +22,7 @@ resource "vmc_sddc" "this" {
   vpc_cidr            = var.vpc_cidr
   num_host            = var.sddc_num_hosts
   provider_type       = "AWS"
-  region              = var.region
+  region              = upper(var.region)
   vxlan_subnet        = var.vxlan_subnet
   delay_account_link  = false
   skip_creating_vxlan = false
