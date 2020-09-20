@@ -12,7 +12,7 @@ data terraform_remote_state "aws-core" {
   config = {
     organization = "grantorchard"
     workspaces = {
-      name = "terraform-aws-core"
+      name = "terraform-vmc-aws-core"
     }
   }
 }
