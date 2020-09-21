@@ -13,18 +13,18 @@ data vmc_connected_accounts "this" {
   account_number = local.aws_account_number
 }
 
-resource "vmc_sddc" "this" {
+resource vmc_sddc "this" {
   sddc_name           = var.sddc_name
-  vpc_cidr            = "10.2.0.0/16"
+  vpc_cidr            = var.vmc_vpc_cidr
   num_host            = var.sddc_num_hosts
   sddc_type           = "1NODE"
   provider_type       = "AWS"
-  region              = "eu-west-2"
-  vxlan_subnet        = "10.10.10.0/23"
+  region              = var.region
+  vxlan_subnet        = var.vxlan_subnet
   delay_account_link  = false
   skip_creating_vxlan = false
-  sso_domain          = "vmc.local"
-  host_instance_type  = "I3_METAL"
+  sso_domain          = var.sso_domain
+  host_instance_type  = var.host_instance_type
 
   deployment_type = "SingleAZ"
   account_link_sddc_config {
@@ -37,4 +37,6 @@ resource "vmc_sddc" "this" {
     delete = "180m"
   }
 }
+
+
 
