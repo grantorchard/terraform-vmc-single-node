@@ -7,19 +7,19 @@ variable org_id {
 
 variable region {
   type = string
-  default = "ap-southeast-2"
+  default = "eu-west-2"
 }
 
 variable sddc_name {
   type = string
   default = "VMCandTFC"
 }
-/*
-variable vpc_cidr {
+
+variable vmc_vpc_cidr {
   type = string
-  default = "10.0.0.0/16"
+  default = "10.2.0.0/16"
 }
-*/
+
 variable sddc_num_hosts {
   type = number
   default = 1
@@ -27,5 +27,15 @@ variable sddc_num_hosts {
 
 variable vxlan_subnet {
   type = string
-  default = "172.16.1.0/23"
+  default = "10.10.10.0/23"
+}
+
+variable sso_domain {
+  type    = string
+  default = "vmc.local"
+}
+
+variable host_instance_type {
+  type = string
+  default = "I3_METAL"
 }
