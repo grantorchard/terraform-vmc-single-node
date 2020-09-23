@@ -8,7 +8,6 @@ provider "vmc" {
   org_id = var.org_id
 }
 
-
 data vmc_connected_accounts "this" {
   account_number = local.aws_account_number
 }
@@ -17,7 +16,6 @@ resource vmc_sddc "this" {
   sddc_name           = var.sddc_name
   vpc_cidr            = var.vmc_vpc_cidr
   num_host            = var.sddc_num_hosts
-  sddc_type           = "1NODE"
   provider_type       = "AWS"
   region              = var.region
   vxlan_subnet        = var.vxlan_subnet
